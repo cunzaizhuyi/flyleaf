@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <link rel="stylesheet" href="../dist/assets/index.486f2219.css">-->
+</head>
+<body>
+<div id="app"></div>
+    <script type="module">
+      import { Marquee } from '../dist/index.es.js';
+
+      const b = new Marquee({
+        target: document.getElementById('app'),
+          props: {
+            data: ['1', '2', '3']
+          }
+      })
+    </script>
+</body>
+</html>
