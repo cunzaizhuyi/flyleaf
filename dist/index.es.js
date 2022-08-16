@@ -1,360 +1,366 @@
-function p() {
+function h() {
 }
-function G(n) {
+function H(n) {
   return n();
 }
 function D() {
   return /* @__PURE__ */ Object.create(null);
 }
-function $(n) {
-  n.forEach(G);
-}
-function K(n) {
-  return typeof n == "function";
-}
-function q(n, t) {
-  return n != n ? t == t : n !== t || n && typeof n == "object" || typeof n == "function";
+function q(n) {
+  n.forEach(H);
 }
 function Q(n) {
-  return Object.keys(n).length === 0;
+  return typeof n == "function";
 }
-function f(n, t) {
-  n.appendChild(t);
-}
-function j(n, t, e) {
-  const r = U(n);
-  if (!r.getElementById(t)) {
-    const o = b("style");
-    o.id = t, o.textContent = e, V(r, o);
-  }
+function N(n, e) {
+  return n != n ? e == e : n !== e || n && typeof n == "object" || typeof n == "function";
 }
 function U(n) {
+  return Object.keys(n).length === 0;
+}
+function f(n, e) {
+  n.appendChild(e);
+}
+function A(n, e, t) {
+  const r = V(n);
+  if (!r.getElementById(e)) {
+    const a = b("style");
+    a.id = e, a.textContent = t, W(r, a);
+  }
+}
+function V(n) {
   if (!n)
     return document;
-  const t = n.getRootNode ? n.getRootNode() : n.ownerDocument;
-  return t && t.host ? t : n.ownerDocument;
+  const e = n.getRootNode ? n.getRootNode() : n.ownerDocument;
+  return e && e.host ? e : n.ownerDocument;
 }
-function V(n, t) {
-  f(n.head || n, t);
+function W(n, e) {
+  f(n.head || n, e);
 }
-function w(n, t, e) {
-  n.insertBefore(t, e || null);
+function w(n, e, t) {
+  n.insertBefore(e, t || null);
 }
-function y(n) {
+function m(n) {
   n.parentNode.removeChild(n);
 }
-function L(n, t) {
-  for (let e = 0; e < n.length; e += 1)
-    n[e] && n[e].d(t);
+function L(n, e) {
+  for (let t = 0; t < n.length; t += 1)
+    n[t] && n[t].d(e);
 }
 function b(n) {
   return document.createElement(n);
 }
-function k(n) {
+function y(n) {
   return document.createTextNode(n);
 }
-function W() {
-  return k(" ");
+function Y() {
+  return y(" ");
 }
-function H(n, t, e, r) {
-  return n.addEventListener(t, e, r), () => n.removeEventListener(t, e, r);
+function J(n, e, t, r) {
+  return n.addEventListener(e, t, r), () => n.removeEventListener(e, t, r);
 }
-function g(n, t, e) {
-  e == null ? n.removeAttribute(t) : n.getAttribute(t) !== e && n.setAttribute(t, e);
+function g(n, e, t) {
+  t == null ? n.removeAttribute(e) : n.getAttribute(e) !== t && n.setAttribute(e, t);
 }
-function Y(n) {
+function Z(n) {
   return Array.from(n.childNodes);
 }
-function N(n, t) {
-  t = "" + t, n.wholeText !== t && (n.data = t);
+function $(n, e) {
+  e = "" + e, n.wholeText !== e && (n.data = e);
 }
-let A;
+function v(n, e, t, r) {
+  t === null ? n.style.removeProperty(e) : n.style.setProperty(e, t, r ? "important" : "");
+}
+let M;
 function _(n) {
-  A = n;
+  M = n;
 }
-const m = [], R = [], v = [], T = [], Z = Promise.resolve();
+const k = [], R = [], z = [], T = [], nn = Promise.resolve();
 let C = !1;
-function nn() {
-  C || (C = !0, Z.then(J));
+function en() {
+  C || (C = !0, nn.then(K));
 }
-function E(n) {
-  v.push(n);
+function j(n) {
+  z.push(n);
 }
-const z = /* @__PURE__ */ new Set();
+const E = /* @__PURE__ */ new Set();
 let x = 0;
-function J() {
-  const n = A;
+function K() {
+  const n = M;
   do {
-    for (; x < m.length; ) {
-      const t = m[x];
-      x++, _(t), tn(t.$$);
+    for (; x < k.length; ) {
+      const e = k[x];
+      x++, _(e), tn(e.$$);
     }
-    for (_(null), m.length = 0, x = 0; R.length; )
+    for (_(null), k.length = 0, x = 0; R.length; )
       R.pop()();
-    for (let t = 0; t < v.length; t += 1) {
-      const e = v[t];
-      z.has(e) || (z.add(e), e());
+    for (let e = 0; e < z.length; e += 1) {
+      const t = z[e];
+      E.has(t) || (E.add(t), t());
     }
-    v.length = 0;
-  } while (m.length);
+    z.length = 0;
+  } while (k.length);
   for (; T.length; )
     T.pop()();
-  C = !1, z.clear(), _(n);
+  C = !1, E.clear(), _(n);
 }
 function tn(n) {
   if (n.fragment !== null) {
-    n.update(), $(n.before_update);
-    const t = n.dirty;
-    n.dirty = [-1], n.fragment && n.fragment.p(n.ctx, t), n.after_update.forEach(E);
+    n.update(), q(n.before_update);
+    const e = n.dirty;
+    n.dirty = [-1], n.fragment && n.fragment.p(n.ctx, e), n.after_update.forEach(j);
   }
 }
-const en = /* @__PURE__ */ new Set();
-function rn(n, t) {
-  n && n.i && (en.delete(n), n.i(t));
+const rn = /* @__PURE__ */ new Set();
+function un(n, e) {
+  n && n.i && (rn.delete(n), n.i(e));
 }
-function un(n, t, e, r) {
-  const { fragment: o, on_mount: i, on_destroy: s, after_update: l } = n.$$;
-  o && o.m(t, e), r || E(() => {
-    const c = i.map(G).filter(K);
-    s ? s.push(...c) : $(c), n.$$.on_mount = [];
-  }), l.forEach(E);
+function an(n, e, t, r) {
+  const { fragment: a, on_mount: c, on_destroy: s, after_update: l } = n.$$;
+  a && a.m(e, t), r || j(() => {
+    const i = c.map(H).filter(Q);
+    s ? s.push(...i) : q(i), n.$$.on_mount = [];
+  }), l.forEach(j);
 }
-function an(n, t) {
-  const e = n.$$;
-  e.fragment !== null && ($(e.on_destroy), e.fragment && e.fragment.d(t), e.on_destroy = e.fragment = null, e.ctx = []);
+function on(n, e) {
+  const t = n.$$;
+  t.fragment !== null && (q(t.on_destroy), t.fragment && t.fragment.d(e), t.on_destroy = t.fragment = null, t.ctx = []);
 }
-function on(n, t) {
-  n.$$.dirty[0] === -1 && (m.push(n), nn(), n.$$.dirty.fill(0)), n.$$.dirty[t / 31 | 0] |= 1 << t % 31;
+function sn(n, e) {
+  n.$$.dirty[0] === -1 && (k.push(n), en(), n.$$.dirty.fill(0)), n.$$.dirty[e / 31 | 0] |= 1 << e % 31;
 }
-function M(n, t, e, r, o, i, s, l = [-1]) {
-  const c = A;
+function O(n, e, t, r, a, c, s, l = [-1]) {
+  const i = M;
   _(n);
   const u = n.$$ = {
     fragment: null,
     ctx: null,
-    props: i,
-    update: p,
-    not_equal: o,
+    props: c,
+    update: h,
+    not_equal: a,
     bound: D(),
     on_mount: [],
     on_destroy: [],
     on_disconnect: [],
     before_update: [],
     after_update: [],
-    context: new Map(t.context || (c ? c.$$.context : [])),
+    context: new Map(e.context || (i ? i.$$.context : [])),
     callbacks: D(),
     dirty: l,
     skip_bound: !1,
-    root: t.target || c.$$.root
+    root: e.target || i.$$.root
   };
   s && s(u.root);
   let d = !1;
-  if (u.ctx = e ? e(n, t.props || {}, (a, h, ...S) => {
-    const B = S.length ? S[0] : h;
-    return u.ctx && o(u.ctx[a], u.ctx[a] = B) && (!u.skip_bound && u.bound[a] && u.bound[a](B), d && on(n, a)), h;
-  }) : [], u.update(), d = !0, $(u.before_update), u.fragment = r ? r(u.ctx) : !1, t.target) {
-    if (t.hydrate) {
-      const a = Y(t.target);
-      u.fragment && u.fragment.l(a), a.forEach(y);
+  if (u.ctx = t ? t(n, e.props || {}, (o, p, ...S) => {
+    const B = S.length ? S[0] : p;
+    return u.ctx && a(u.ctx[o], u.ctx[o] = B) && (!u.skip_bound && u.bound[o] && u.bound[o](B), d && sn(n, o)), p;
+  }) : [], u.update(), d = !0, q(u.before_update), u.fragment = r ? r(u.ctx) : !1, e.target) {
+    if (e.hydrate) {
+      const o = Z(e.target);
+      u.fragment && u.fragment.l(o), o.forEach(m);
     } else
       u.fragment && u.fragment.c();
-    t.intro && rn(n.$$.fragment), un(n, t.target, t.anchor, t.customElement), J();
+    e.intro && un(n.$$.fragment), an(n, e.target, e.anchor, e.customElement), K();
   }
-  _(c);
+  _(i);
 }
-class O {
+class P {
   $destroy() {
-    an(this, 1), this.$destroy = p;
+    on(this, 1), this.$destroy = h;
   }
-  $on(t, e) {
-    const r = this.$$.callbacks[t] || (this.$$.callbacks[t] = []);
-    return r.push(e), () => {
-      const o = r.indexOf(e);
-      o !== -1 && r.splice(o, 1);
+  $on(e, t) {
+    const r = this.$$.callbacks[e] || (this.$$.callbacks[e] = []);
+    return r.push(t), () => {
+      const a = r.indexOf(t);
+      a !== -1 && r.splice(a, 1);
     };
   }
-  $set(t) {
-    this.$$set && !Q(t) && (this.$$.skip_bound = !0, this.$$set(t), this.$$.skip_bound = !1);
+  $set(e) {
+    this.$$set && !U(e) && (this.$$.skip_bound = !0, this.$$set(e), this.$$.skip_bound = !1);
   }
-}
-function sn(n) {
-  j(n, "svelte-1etnm5k", ".svelte-1etnm5k,.svelte-1etnm5k::before,.svelte-1etnm5k::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgba(0,0,0,0);--un-ring-shadow:0 0 rgba(0,0,0,0);--un-shadow-inset: ;--un-shadow:0 0 rgba(0,0,0,0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: }.svelte-1etnm5k::backdrop{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgba(0,0,0,0);--un-ring-shadow:0 0 rgba(0,0,0,0);--un-shadow-inset: ;--un-shadow:0 0 rgba(0,0,0,0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: }.bg-black.svelte-1etnm5k{--un-bg-opacity:1;background-color:rgba(0,0,0,var(--un-bg-opacity))}.text-white.svelte-1etnm5k{--un-text-opacity:1;color:rgba(255,255,255,var(--un-text-opacity))}");
 }
 function cn(n) {
-  let t, e, r, o, i;
+  A(n, "svelte-1etnm5k", ".svelte-1etnm5k,.svelte-1etnm5k::before,.svelte-1etnm5k::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgba(0,0,0,0);--un-ring-shadow:0 0 rgba(0,0,0,0);--un-shadow-inset: ;--un-shadow:0 0 rgba(0,0,0,0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: }.svelte-1etnm5k::backdrop{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgba(0,0,0,0);--un-ring-shadow:0 0 rgba(0,0,0,0);--un-shadow-inset: ;--un-shadow:0 0 rgba(0,0,0,0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: }.bg-black.svelte-1etnm5k{--un-bg-opacity:1;background-color:rgba(0,0,0,var(--un-bg-opacity))}.text-white.svelte-1etnm5k{--un-text-opacity:1;color:rgba(255,255,255,var(--un-text-opacity))}");
+}
+function ln(n) {
+  let e, t, r, a, c;
   return {
     c() {
-      t = b("button"), e = k("count is "), r = k(n[0]), g(t, "class", "bg-black text-white svelte-1etnm5k");
+      e = b("button"), t = y("count is "), r = y(n[0]), g(e, "class", "bg-black text-white svelte-1etnm5k");
     },
     m(s, l) {
-      w(s, t, l), f(t, e), f(t, r), o || (i = H(t, "click", n[1]), o = !0);
+      w(s, e, l), f(e, t), f(e, r), a || (c = J(e, "click", n[1]), a = !0);
     },
     p(s, [l]) {
-      l & 1 && N(r, s[0]);
+      l & 1 && $(r, s[0]);
     },
-    i: p,
-    o: p,
+    i: h,
+    o: h,
     d(s) {
-      s && y(t), o = !1, i();
+      s && m(e), a = !1, c();
     }
   };
 }
-function ln(n, t, e) {
+function dn(n, e, t) {
   let r = 0;
   return [r, () => {
-    e(0, r += 1);
+    t(0, r += 1);
   }];
 }
-class kn extends O {
-  constructor(t) {
-    super(), M(this, t, ln, cn, q, {}, sn);
+class mn extends P {
+  constructor(e) {
+    super(), O(this, e, dn, ln, N, {}, cn);
   }
-}
-function dn(n) {
-  j(n, "svelte-1lydoww", ".svelte-1lydoww,.svelte-1lydoww::before,.svelte-1lydoww::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgba(0,0,0,0);--un-ring-shadow:0 0 rgba(0,0,0,0);--un-shadow-inset: ;--un-shadow:0 0 rgba(0,0,0,0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: }.svelte-1lydoww::backdrop{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgba(0,0,0,0);--un-ring-shadow:0 0 rgba(0,0,0,0);--un-shadow-inset: ;--un-shadow:0 0 rgba(0,0,0,0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: }.bg-red.svelte-1lydoww{--un-bg-opacity:1;background-color:rgba(248,113,113,var(--un-bg-opacity))}.text-white.svelte-1lydoww{--un-text-opacity:1;color:rgba(255,255,255,var(--un-text-opacity))}.btn.svelte-1lydoww{border:8px solid #35eb9a}");
 }
 function fn(n) {
-  let t, e, r, o, i;
+  A(n, "svelte-1lydoww", ".svelte-1lydoww,.svelte-1lydoww::before,.svelte-1lydoww::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgba(0,0,0,0);--un-ring-shadow:0 0 rgba(0,0,0,0);--un-shadow-inset: ;--un-shadow:0 0 rgba(0,0,0,0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: }.svelte-1lydoww::backdrop{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgba(0,0,0,0);--un-ring-shadow:0 0 rgba(0,0,0,0);--un-shadow-inset: ;--un-shadow:0 0 rgba(0,0,0,0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: }.bg-red.svelte-1lydoww{--un-bg-opacity:1;background-color:rgba(248,113,113,var(--un-bg-opacity))}.text-white.svelte-1lydoww{--un-text-opacity:1;color:rgba(255,255,255,var(--un-text-opacity))}.btn.svelte-1lydoww{border:8px solid #35eb9a}");
+}
+function pn(n) {
+  let e, t, r, a, c;
   return {
     c() {
-      t = b("button"), e = k("count is "), r = k(n[0]), g(t, "class", "btn bg-red text-white svelte-1lydoww");
+      e = b("button"), t = y("count is "), r = y(n[0]), g(e, "class", "btn bg-red text-white svelte-1lydoww");
     },
     m(s, l) {
-      w(s, t, l), f(t, e), f(t, r), o || (i = H(t, "click", n[1]), o = !0);
+      w(s, e, l), f(e, t), f(e, r), a || (c = J(e, "click", n[1]), a = !0);
     },
     p(s, [l]) {
-      l & 1 && N(r, s[0]);
+      l & 1 && $(r, s[0]);
     },
-    i: p,
-    o: p,
+    i: h,
+    o: h,
     d(s) {
-      s && y(t), o = !1, i();
+      s && m(e), a = !1, c();
     }
   };
 }
-function pn(n, t, e) {
+function gn(n, e, t) {
   let r = 0;
   return [r, () => {
-    e(0, r += 2);
+    t(0, r += 2);
   }];
 }
-class yn extends O {
-  constructor(t) {
-    super(), M(this, t, pn, fn, q, {}, dn);
+class kn extends P {
+  constructor(e) {
+    super(), O(this, e, gn, pn, N, {}, fn);
   }
 }
-function gn(n) {
-  j(n, "svelte-bp3fok", ".svelte-bp3fok,.svelte-bp3fok::before,.svelte-bp3fok::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgba(0,0,0,0);--un-ring-shadow:0 0 rgba(0,0,0,0);--un-shadow-inset: ;--un-shadow:0 0 rgba(0,0,0,0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: }.svelte-bp3fok::backdrop{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgba(0,0,0,0);--un-ring-shadow:0 0 rgba(0,0,0,0);--un-shadow-inset: ;--un-shadow:0 0 rgba(0,0,0,0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: }@keyframes svelte-bp3fok-scroll{from{transform:translateX(0)}to{transform:translateX(calc(-100% - var(--gap)))}}.marquee.svelte-bp3fok{--gap:1rem;display:flex;overflow:hidden;user-select:none;gap:var(--gap)}.marquee_content.svelte-bp3fok{flex-shrink:0;display:flex;justify-content:space-around;min-width:100%;gap:var(--gap);animation:svelte-bp3fok-scroll 10s linear infinite}");
+function bn(n) {
+  A(n, "svelte-1cqo505", ".svelte-1cqo505.svelte-1cqo505,.svelte-1cqo505.svelte-1cqo505::before,.svelte-1cqo505.svelte-1cqo505::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgba(0,0,0,0);--un-ring-shadow:0 0 rgba(0,0,0,0);--un-shadow-inset: ;--un-shadow:0 0 rgba(0,0,0,0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: }.svelte-1cqo505.svelte-1cqo505::backdrop{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgba(0,0,0,0);--un-ring-shadow:0 0 rgba(0,0,0,0);--un-shadow-inset: ;--un-shadow:0 0 rgba(0,0,0,0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: }@keyframes svelte-1cqo505-scroll{from{transform:translateX(0)}to{transform:translateX(calc(-100% - var(--tail-gap)))}}.marquee.svelte-1cqo505.svelte-1cqo505{display:flex;overflow:hidden;user-select:none;gap:var(--tail-gap)}.marquee.svelte-1cqo505 .marquee_content.svelte-1cqo505{flex-shrink:0;display:flex;justify-content:space-around;min-width:100%;gap:var(--tail-gap);animation-name:svelte-1cqo505-scroll;animation-duration:var(--tail-speed);animation-iteration-count:infinite;animation-timing-function:linear}");
 }
-function X(n, t, e) {
+function X(n, e, t) {
   const r = n.slice();
-  return r[1] = t[e], r;
+  return r[3] = e[t], r;
 }
-function I(n, t, e) {
+function I(n, e, t) {
   const r = n.slice();
-  return r[1] = t[e], r;
-}
-function P(n) {
-  let t, e = n[1] + "", r;
-  return {
-    c() {
-      t = b("li"), r = k(e), g(t, "class", "svelte-bp3fok");
-    },
-    m(o, i) {
-      w(o, t, i), f(t, r);
-    },
-    p(o, i) {
-      i & 1 && e !== (e = o[1] + "") && N(r, e);
-    },
-    d(o) {
-      o && y(t);
-    }
-  };
+  return r[3] = e[t], r;
 }
 function F(n) {
-  let t;
+  let e, t = n[3] + "", r;
   return {
     c() {
-      t = b("li"), t.textContent = "item", g(t, "class", "svelte-bp3fok");
+      e = b("div"), r = y(t), g(e, "class", "svelte-1cqo505");
     },
-    m(e, r) {
-      w(e, t, r);
+    m(a, c) {
+      w(a, e, c), f(e, r);
     },
-    p,
-    d(e) {
-      e && y(t);
+    p(a, c) {
+      c & 1 && t !== (t = a[3] + "") && $(r, t);
+    },
+    d(a) {
+      a && m(e);
     }
   };
 }
-function bn(n) {
-  let t, e, r, o, i = n[0], s = [];
-  for (let u = 0; u < i.length; u += 1)
-    s[u] = P(I(n, i, u));
-  let l = n[0], c = [];
-  for (let u = 0; u < l.length; u += 1)
-    c[u] = F(X(n, l, u));
+function G(n) {
+  let e, t = n[3] + "", r;
   return {
     c() {
-      t = b("div"), e = b("ul");
+      e = b("div"), r = y(t), g(e, "class", "svelte-1cqo505");
+    },
+    m(a, c) {
+      w(a, e, c), f(e, r);
+    },
+    p(a, c) {
+      c & 1 && t !== (t = a[3] + "") && $(r, t);
+    },
+    d(a) {
+      a && m(e);
+    }
+  };
+}
+function hn(n) {
+  let e, t, r, a, c = n[0], s = [];
+  for (let u = 0; u < c.length; u += 1)
+    s[u] = F(I(n, c, u));
+  let l = n[0], i = [];
+  for (let u = 0; u < l.length; u += 1)
+    i[u] = G(X(n, l, u));
+  return {
+    c() {
+      e = b("div"), t = b("div");
       for (let u = 0; u < s.length; u += 1)
         s[u].c();
-      r = W(), o = b("ul");
-      for (let u = 0; u < c.length; u += 1)
-        c[u].c();
-      g(e, "class", "marquee_content svelte-bp3fok"), g(o, "class", "marquee_content svelte-bp3fok"), g(o, "aria-hidden", "true"), g(t, "class", "marquee svelte-bp3fok");
+      r = Y(), a = b("div");
+      for (let u = 0; u < i.length; u += 1)
+        i[u].c();
+      g(t, "class", "marquee_content svelte-1cqo505"), g(a, "class", "marquee_content svelte-1cqo505"), g(a, "aria-hidden", "true"), g(e, "class", "marquee svelte-1cqo505"), v(e, "--tail-gap", n[1]), v(e, "--tail-speed", n[2]);
     },
     m(u, d) {
-      w(u, t, d), f(t, e);
-      for (let a = 0; a < s.length; a += 1)
-        s[a].m(e, null);
-      f(t, r), f(t, o);
-      for (let a = 0; a < c.length; a += 1)
-        c[a].m(o, null);
+      w(u, e, d), f(e, t);
+      for (let o = 0; o < s.length; o += 1)
+        s[o].m(t, null);
+      f(e, r), f(e, a);
+      for (let o = 0; o < i.length; o += 1)
+        i[o].m(a, null);
     },
     p(u, [d]) {
       if (d & 1) {
-        i = u[0];
-        let a;
-        for (a = 0; a < i.length; a += 1) {
-          const h = I(u, i, a);
-          s[a] ? s[a].p(h, d) : (s[a] = P(h), s[a].c(), s[a].m(e, null));
+        c = u[0];
+        let o;
+        for (o = 0; o < c.length; o += 1) {
+          const p = I(u, c, o);
+          s[o] ? s[o].p(p, d) : (s[o] = F(p), s[o].c(), s[o].m(t, null));
         }
-        for (; a < s.length; a += 1)
-          s[a].d(1);
-        s.length = i.length;
+        for (; o < s.length; o += 1)
+          s[o].d(1);
+        s.length = c.length;
       }
       if (d & 1) {
         l = u[0];
-        let a;
-        for (a = 0; a < l.length; a += 1) {
-          const h = X(u, l, a);
-          c[a] ? c[a].p(h, d) : (c[a] = F(), c[a].c(), c[a].m(o, null));
+        let o;
+        for (o = 0; o < l.length; o += 1) {
+          const p = X(u, l, o);
+          i[o] ? i[o].p(p, d) : (i[o] = G(p), i[o].c(), i[o].m(a, null));
         }
-        for (; a < c.length; a += 1)
-          c[a].d(1);
-        c.length = l.length;
+        for (; o < i.length; o += 1)
+          i[o].d(1);
+        i.length = l.length;
       }
+      d & 2 && v(e, "--tail-gap", u[1]), d & 4 && v(e, "--tail-speed", u[2]);
     },
-    i: p,
-    o: p,
+    i: h,
+    o: h,
     d(u) {
-      u && y(t), L(s, u), L(c, u);
+      u && m(e), L(s, u), L(i, u);
     }
   };
 }
-function hn(n, t, e) {
-  let { data: r } = t;
-  return n.$$set = (o) => {
-    "data" in o && e(0, r = o.data);
-  }, [r];
+function yn(n, e, t) {
+  let { data: r } = e, { gap: a = "60px" } = e, { speed: c = "5s" } = e;
+  return n.$$set = (s) => {
+    "data" in s && t(0, r = s.data), "gap" in s && t(1, a = s.gap), "speed" in s && t(2, c = s.speed);
+  }, [r, a, c];
 }
-class mn extends O {
-  constructor(t) {
-    super(), M(this, t, hn, bn, q, { data: 0 }, gn);
+class _n extends P {
+  constructor(e) {
+    super(), O(this, e, yn, hn, N, { data: 0, gap: 1, speed: 2 }, bn);
   }
 }
 export {
-  kn as Counter,
-  yn as Counter2,
-  mn as Marquee
+  mn as Counter,
+  kn as Counter2,
+  _n as Marquee
 };
