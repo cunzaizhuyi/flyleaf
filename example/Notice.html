@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <link rel="stylesheet" href="../dist/assets/index.486f2219.css">-->
+</head>
+<body>
+<div id="app"></div>
+    <script type="module">
+      import { notice } from '../dist/index.es.js';
+
+      notice({
+          clickText: '我知道了',
+          title: '标题',
+          content: 'hello tail-ui',
+          onClick: () => {
+              console.log('点击了')
+          }
+      })
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <link rel="stylesheet" href="../dist/assets/index.486f2219.css">-->
+</head>
+<body>
+<div id="app"></div>
+    <script type="module">
+      import { confirm } from '../dist/index.es.js';
+
+      confirm({
+          title: '标题',
+          content: 'hello tail-ui',
+          cancelText: '取消',
+          okText: '确定',
+          onOk: () => {
+              console.log('ok点击了')
+          },
+          onCancel: () => {
+              console.log('cancel点击了')
+          }
+      })
+    </script>
+</body>
+</html>

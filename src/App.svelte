@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Counter from '@/lib/Counter.svelte'
-  import Marquee from '@/lib/Marquee.svelte'
-  import { toast } from '@/lib/toast';
+  import Counter from '@/components/Counter.svelte'
+  import Marquee from '@/components/Marquee.svelte'
+  import { toast } from '@/components/toast';
 
   const data = ['item1', 'item2', 'item3']
 
