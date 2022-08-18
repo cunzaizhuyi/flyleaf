@@ -1,7 +1,7 @@
 <!-- inspired by https://ryanmulligan.dev/blog/css-marquee/ -->
 
 <script lang="ts">
-  export let data: [];
+  export let data = [];
   export let gap = '60px';
   export let speed = '5s';
 </script>

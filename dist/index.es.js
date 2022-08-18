@@ -375,7 +375,7 @@ function Cn(t) {
   };
 }
 function jn(t, n, e) {
-  let { data: o } = n, { gap: r = "60px" } = n, { speed: i = "5s" } = n;
+  let { data: o = [] } = n, { gap: r = "60px" } = n, { speed: i = "5s" } = n;
   return t.$$set = (s) => {
     "data" in s && e(0, o = s.data), "gap" in s && e(1, r = s.gap), "speed" in s && e(2, i = s.speed);
   }, [o, r, i];

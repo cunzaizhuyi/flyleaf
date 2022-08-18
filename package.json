@@ -15,14 +15,25 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-vite": "^0.2.2",
+    "@storybook/svelte": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
     "@sveltejs/vite-plugin-svelte": "^1.0.1",
     "@tsconfig/svelte": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
     "@unocss/core": "^0.45.7",
+    "babel-loader": "^8.2.5",
     "eslint": "^8.22.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "less": "^4.1.3",
@@ -30,10 +41,12 @@
     "rollup": "^2.0.0",
     "svelte": "^3.49.0",
     "svelte-check": "^2.8.0",
+    "svelte-loader": "^3.1.3",
     "svelte-preprocess": "^4.10.7",
     "tslib": "^2.4.0",
     "typescript": "^4.6.4",
     "unocss": "^0.45.6",
     "vite": "^3.0.0"
-  }
+  },
+  "dependencies": {}
 }
