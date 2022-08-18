@@ -24,7 +24,7 @@ module.exports = {
     // return the customized config
     return mergeConfig(config, {
       // customize the Vite config here
-      base: '/tail-ui',
+      base: './',
     });
   },
 }
