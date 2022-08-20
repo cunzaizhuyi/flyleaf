@@ -1,6 +1,12 @@
 const { mergeConfig } = require('vite');
 const Unocss = require('unocss/vite')
 
+let unoCfg =
+  import("../uno.js").then(res => {
+    unoCfg = res.default;
+    // console.log('uno res: ', res);
+  })
+
 module.exports = {
   "stories": [
     "../src/**/*.stories.mdx",
@@ -27,7 +33,9 @@ module.exports = {
     //   // customize the Vite config here
     //   base: './',
     // });
-    config.plugins.push(Unocss.default());
+    config.plugins.push(Unocss.default({
+      ...unoCfg,
+    }));
     if(configType === "PRODUCTION") {
       return {...config, base: './'};
     }

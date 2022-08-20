@@ -1,4 +1,5 @@
-import Confirm from '@/components/confirm/Confirm.svelte';
+// import Confirm from '@/components/confirm/Confirm.svelte';
+import Confirm from './Confirm.svelte';
 
 interface IOption{
   title: string
@@ -19,11 +20,13 @@ export const confirm = (options: IOption) => {
     },
   });
 
-  div.$on('onOk', () => {
-    div.$destroy();
-  });
+  // div.$on('onOk', () => {
+  //   div.$destroy();
+  // });
 
-  div.$on('onCancel', () => {
-    div.$destroy();
-  });
+  // div.$on('onCancel', () => {
+  //   div.$destroy();
+  // });
+
+  return div;
 };

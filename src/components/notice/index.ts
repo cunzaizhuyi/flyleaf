@@ -17,8 +17,8 @@ export const notice = (options: IOption) => {
     },
   });
 
-  div.$on('click', () => {
-    options.onClick && options.onClick();
-    div.$destroy();
-  });
+  // div.$on('click', () => {
+  //   options.onClick && options.onClick();
+  //   div.$destroy();
+  // });
 };
