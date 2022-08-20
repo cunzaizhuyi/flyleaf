@@ -6,7 +6,7 @@ export default {
   title: 'Example/Marquee',
   component: Marquee,
   argTypes: {
-    data: { control: 'text' },
+    data: { control: 'array' },
     gap: { control: 'text' },
     speed: { action: 'test' },
   },

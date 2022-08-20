@@ -1,4 +1,5 @@
 const { mergeConfig } = require('vite');
+const Unocss = require('unocss/vite')
 
 module.exports = {
   "stories": [
@@ -22,9 +23,14 @@ module.exports = {
   },
   async viteFinal(config, { configType }) {
     // return the customized config
-    return mergeConfig(config, {
-      // customize the Vite config here
-      base: './',
-    });
+    // return mergeConfig(config, {
+    //   // customize the Vite config here
+    //   base: './',
+    // });
+    config.plugins.push(Unocss.default());
+    if(configType === "PRODUCTION") {
+      return {...config, base: './'};
+    }
+    return config;
   },
 }
