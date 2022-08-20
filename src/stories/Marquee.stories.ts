@@ -3,7 +3,7 @@ import Marquee from '../components/Marquee.svelte';
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 // More on argTypes: https://storybook.js.org/docs/svelte/api/argtypes
 export default {
-  title: 'Example/Marquee',
+  title: 'Components/Marquee',
   component: Marquee,
   argTypes: {
     data: { control: 'array' },

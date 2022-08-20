@@ -1,6 +1,6 @@
 {
   "name": "flyleaf",
-  "private": true,
+  "private": false,
   "version": "0.1.0",
   "type": "module",
   "module": "dist/index.es.js",
@@ -17,7 +17,8 @@
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "pub": "npm publish"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
