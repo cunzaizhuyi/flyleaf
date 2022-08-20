@@ -1,3 +1,5 @@
+![](https://github.com/cunzaizhuyi/flyleaf/blob/master/public/logo-big.jpg)
+
 ## What
 
 flyleaf.js是一个基于svelte开发的跨框架组件库。
