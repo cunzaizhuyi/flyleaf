@@ -6,3 +6,4 @@ export { default as StepMask } from './StepMask.svelte';
 export { toast } from './toast';
 export { notice } from './notice';
 export { confirm } from './confirm';
+export { mask } from './mask';
