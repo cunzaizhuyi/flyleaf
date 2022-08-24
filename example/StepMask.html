@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+    <style>
+        body{
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        #app{
+            margin: 0 auto;
+            padding: 0;
+        }
+        #box1, #box2, #box3, #box4{
+            width: 200px;
+            height: 100px;
+            border: 1px solid #ccc;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div id="box1" style="background: #1ea7fd; left: 30px; top: 30px">A</div>
+    <div id="box2" style="background: yellow; left: 250px; top: 160px">B</div>
+    <div id="box3" style="background: yellowgreen; left: 470px; top: 290px">C</div>
+    <div id="box4" style="background: papayawhip; left: 690px; top: 420px">D</div>
+</div>
+    <script type="module">
+      import { StepMask } from '../dist/index.es.js';
+
+      const mask = new StepMask({
+        target: document.getElementById('app'),
+        props: {
+          isStart: false,
+          stepArr: [
+              {
+                  id: 'box1',
+                  desc: '这是第1步'
+              },
+              {
+                  id: 'box2',
+                  desc: '这是第2步'
+              },
+              {
+                  id: 'box3',
+                  desc: '这是第3步'
+              },
+              {
+                  id: 'box4',
+                  desc: '这是第4步'
+              }
+          ],
+        }
+      })
+      setTimeout(() => {
+          mask.$set({'isStart': true});
+      }, 1000)
+    </script>
+</body>
+</html>
