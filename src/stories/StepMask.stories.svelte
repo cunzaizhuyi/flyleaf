@@ -38,7 +38,7 @@
     <div id="box1" class="box bg-yellow">A</div>
     <div id="box2" class="box bg-pink">B</div>
     <div id="box3" class="box bg-blue">C</div>
-    <StepMask isStart="{isStart}" stepArr="{stepArr}"></StepMask>
+    <StepMask isStart="{isStart}" stepArr="{stepArr}" btnText="next step"></StepMask>
   </div>
 </Story>
 
@@ -50,6 +50,10 @@
     width: 200px;
     height: 100px;
     margin: 50px;
+  }
+  #box2{
+    position: relative;
+    left: 300px;
   }
 </style>
 
