@@ -1,11 +1,16 @@
 ![](https://github.com/cunzaizhuyi/flyleaf/blob/master/public/logo-big.jpg)
 
+[中文](https://github.com/cunzaizhuyi/flyleaf/blob/master/README_cn.md)
+
 ## What
 
-flyleaf.js是一个基于svelte开发的跨框架组件库。
+flyleaf.js is a components library based on sveltjs。
 
-好处是：无论你的项目使用什么前端框架（Vue, React, Angular等），都可以引用flyleaf.js里的组件。
-因为svelte编译完的组件其实是js模块，即无框架组件。
+the advantage is it's frontend framework non-related, that is to say
+no matter what you are using in your project, e.g. Vue2/Vue3/React/Angular, 
+you can use flyleaf's components;
+
+because a compiled component based on sveltejs is ES class;
 
 
 ## Usage
@@ -30,5 +35,5 @@ com.$on('some-event', (evt)={
 })
 ```
 
-## 贡献
-欢迎贡献组件，顺便练手svelte.js语法。
+## Contribute
+welcome to Contribute your components and practice svelte syntax by the way.
