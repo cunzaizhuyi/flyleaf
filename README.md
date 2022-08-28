@@ -6,11 +6,11 @@
 
 flyleaf.js is a components library based on sveltjs。
 
-the advantage is it's frontend framework non-related, that is to say
+It's a cross frontend framework component library, that is to say
 no matter what you are using in your project, e.g. Vue2/Vue3/React/Angular, 
-you can use flyleaf's components;
+you can use flyleaf's components.
 
-because a compiled component based on sveltejs is ES class;
+Because a compiled component based on sveltejs is ES class;
 
 
 ## Usage
