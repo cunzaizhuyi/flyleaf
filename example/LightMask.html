@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+    <style>
+        #box1, #box2, #box3, #box4{
+            width: 200px;
+            height: 100px;
+            border: 1px solid #ccc;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div id="box1" style="background: #1ea7fd; left: 30px; top: 30px">A</div>
+    <div id="box2" style="background: yellow; left: 30px; top: 160px">B</div>
+    <div id="box3" style="background: yellowgreen; left: 30px; top: 290px">C</div>
+    <div id="box4" style="background: papayawhip; left: 30px; top: 420px">D</div>
+</div>
+    <script type="module">
+      import { mask } from '../dist/index.es.js';
+
+      const m = mask({id: 'box3', duration: 2});
+      setTimeout(() => {
+          m();
+      }, 2000)
+    </script>
+</body>
+</html>

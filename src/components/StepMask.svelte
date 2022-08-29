@@ -7,6 +7,7 @@
   export let gapWidth = 5; // 蒙层镂空区域 比 待镂空元素本身 大多少
   export let isStart:Boolean;
   export let stepArr = [];
+  export let btnText = '下一步';
 
   const setMask = (arr: {id: string, desc: string}[]) => {
     if (arr.length === 0) {
@@ -67,7 +68,7 @@
 <div bind:this={maskDiv} style="display: none">
   <div class="mask-tip" bind:this={tipDiv}>
     <span id="mask-desc" class="mask-tip-desc"></span>
-    <button id="next-step-btn" class="mask-tip-btn">下一步</button>
+    <button id="next-step-btn" class="mask-tip-btn">{btnText}</button>
   </div>
 </div>
 
