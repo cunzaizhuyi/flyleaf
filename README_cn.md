@@ -36,4 +36,4 @@ com.$on('some-event', (evt)={
 ## 用户群
 
 使用中有任何疑问，欢迎来用户群交流
-![用户群](https://github.com/cunzaizhuyi/flyleaf/blob/master/public/logo-big.jpg)
+![用户群](https://github.com/cunzaizhuyi/flyleaf/blob/master/public/user-group.jpg)
