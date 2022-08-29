@@ -1,4 +1,5 @@
-![](https://github.com/cunzaizhuyi/flyleaf/blob/master/public/logo-big.jpg)
+<img src="https://github.com/cunzaizhuyi/flyleaf/blob/master/public/logo-big.jpg" 
+width="200" height="100" alt="logo"/><br/>
 
 [中文](https://github.com/cunzaizhuyi/flyleaf/blob/master/README_cn.md)
 
@@ -38,4 +39,4 @@ com.$on('some-event', (evt)={
 
 ## Contribute
 
-welcome to Contribute your components and practice svelte syntax by the way.
+welcome to contribute your components and practice svelte syntax by the way.

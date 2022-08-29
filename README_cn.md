@@ -36,4 +36,4 @@ com.$on('some-event', (evt)={
 
 使用中有任何疑问，欢迎来用户群交流
 
-![](https://github.com/cunzaizhuyi/flyleaf/blob/master/public/user-group.jpg)
+<img src="https://github.com/cunzaizhuyi/flyleaf/blob/master/public/user_group.jpg" />
