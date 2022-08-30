@@ -1,7 +1,6 @@
 <script>
-	import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
+	import { Meta, Story } from '@storybook/addon-svelte-csf'
 	import Teleport from '../components/teleport/Teleport.svelte'
-
 	let disableTeleport = false
 </script>
 
