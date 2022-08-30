@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
-	import { useRect } from '@/util/useRect'
+	import { useRect } from './util/useRect'
 	import { DEFAULT_PLACEMENT, getPlacementDict, getPlacementLabel } from './TipConfig'
 
 	import Teleport from '../teleport/Teleport.svelte'

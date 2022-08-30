@@ -1,7 +1,6 @@
-import { useRect } from '@/util/useRect'
 
-import { createConfigList, reduceConfigList, DEFAULT_KEY_LIST } from '@/util/useConfigList'
-import type { ConfigItem, ConfigList, ConfigObject } from '@/util/useConfigList'
+import { reduceConfigList, DEFAULT_KEY_LIST } from './util/useConfigList'
+import type { ConfigItem, ConfigList, ConfigObject } from './util/useConfigList'
 export const DEFAULT_PLACEMENT = 'bottom'
 
 export const PLACEMENT_NAME = 'tooltip_pm'
