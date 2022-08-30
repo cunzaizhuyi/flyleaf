@@ -23,6 +23,9 @@
 			desc: '第二步：',
 		},
 	]
+	let switchOn = false
+
+	let disableTeleport = false
 </script>
 
 <div class="card" id="card">
