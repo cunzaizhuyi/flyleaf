@@ -6,7 +6,6 @@
 	export let text = ''
 	export let placement = DEFAULT_PLACEMENT
 	export let alwaysShow = false
-
 	let showTipContent: boolean = alwaysShow ? alwaysShow : false
 	const tigger =
 		(flag = false) =>

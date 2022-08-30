@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { createEventDispatcher, onMount } from 'svelte'
+	import { createEventDispatcher } from 'svelte'
 
 	const dispatch = createEventDispatcher()
 
-	const onMouseenter = (e) => dispatch('tiggerin', e)
-	const onMouseleave = (e) => dispatch('tiggerout', e)
+	const onMouseenter = e => dispatch('tiggerin', e)
+	const onMouseleave = e => dispatch('tiggerout', e)
 
 	let bodyWidth
 	let bodyEl

@@ -51,7 +51,7 @@
 </Tooltip>
 
 <Tooltip text={inputValue}>
-	<input value={inputValue} on:input={(e) => (inputValue = e.target?.value)} />
+	<input value={inputValue} on:input={e => (inputValue = e.target?.value)} />
 </Tooltip>
 
 <div style="margin-top:50px" />

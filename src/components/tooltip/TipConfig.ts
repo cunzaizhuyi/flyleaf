@@ -24,7 +24,6 @@ const getRightLeft = (bodyRect: DOMRect) => bodyRect.x + bodyRect.width + 10 + '
 
 const getTopTop = (bodyRect: DOMRect, contentRect: DOMRect) => bodyRect.y - contentRect.height - 10 + 'px'
 const getEndTop = (bodyRect: DOMRect) => bodyRect.y - bodyRect.height / 2 + 'px'
-
 export const getPlacementDict = (name: string = PLACEMENT_NAME) => reduceConfigList(([
   ['top', 'top', {
     getRect: (bodyEl, contentEl) => {

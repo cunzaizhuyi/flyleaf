@@ -2,7 +2,6 @@
 	import { getPlacementDict, getPlacementLabel } from './TipConfig'
 
 	export let placement = null
-
 	const PLACEMENT_DICT = getPlacementDict('tiparrow_pm')
 </script>
 
