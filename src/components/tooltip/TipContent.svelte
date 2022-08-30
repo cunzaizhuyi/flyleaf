@@ -1,48 +1,43 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
+	import { useRect } from '@/util/useRect'
+	import {
+		DEFAULT_PLACEMENT,
+		getPlacementDict,
+		getPlacementLabel,
+	} from './TipConfig'
+
+	import Teleport from '../teleport/Teleport.svelte'
 	import Arrow from './TipArrow.svelte'
-	import { DEFAULT_PLACEMENT, getPlacementClass } from './TipConfig'
 
 	export let bodyEl = null
-	export let show = false
 	export let placement = DEFAULT_PLACEMENT
 
-	let left = 0
-	let contentWidth = 0
-	const setContentWidth = (v: number) => (contentWidth = v)
-
 	let contentEl
+	let contentStyle
+	let teleportDisable = true
+	let bodyElCopy, contentElCopy
+
+	const PLACEMENT_DICT = getPlacementDict()
+	$: contentClass = [
+		'tooltip-content',
+		getPlacementLabel(placement, PLACEMENT_DICT),
+	].join(' ')
+
 	onMount(() => {
-		// 隐藏状态下拿不到contentEl.clientWidth
-		const CONTENT_DISPLAY = contentEl.style.display // 有可能是空
-		if (!CONTENT_DISPLAY || CONTENT_DISPLAY === 'visible')
-			contentEl.style.display = 'block'
-		setContentWidth(contentEl.clientWidth)
-		contentEl.style.display = CONTENT_DISPLAY
+		bodyElCopy = useRect(bodyEl)
+		contentElCopy = useRect(contentEl)
+		contentStyle = PLACEMENT_DICT[placement].getRect(bodyElCopy, contentElCopy)
+		if (contentStyle) teleportDisable = false
 	})
-
-	console.log(111, getPlacementClass(placement))
-	$: {
-		const curBodyCtx = bodyEl?.children[0]
-		if (curBodyCtx && contentWidth) {
-			left =
-				curBodyCtx.clientWidth / 2 - contentWidth / 2 + curBodyCtx.offsetLeft
-		}
-	}
-
-	$: contentClass = ['tooltip-content', getPlacementClass(placement)].join(' ')
 </script>
 
-<div
-	bind:this={contentEl}
-	bind:clientWidth={contentWidth}
-	style:left={left + 'px'}
-	class={contentClass}
-	class:hidden={!show}
->
-	<slot />
-	<Arrow {placement} />
-</div>
+<Teleport disabled={teleportDisable}>
+	<div bind:this={contentEl} style={contentStyle} class={contentClass}>
+		<slot />
+		<Arrow {placement} />
+	</div>
+</Teleport>
 
 <style lang="scss">
 	@import './style/TipContent.scss';

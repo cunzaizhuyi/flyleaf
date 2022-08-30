@@ -1,9 +1,12 @@
 <script lang="ts">
+	import { getPlacementDict, getPlacementLabel } from './TipConfig'
+
 	export let placement = null
-	import { getPlacementClass } from './TipConfig'
+
+	const PLACEMENT_DICT = getPlacementDict('tiparrow_pm')
 </script>
 
-<div class="tooltip-arrow {getPlacementClass(placement, 'tiparrow_pm')}">
+<div class="tooltip-arrow {getPlacementLabel(placement, PLACEMENT_DICT)}">
 	<slot />
 </div>
 

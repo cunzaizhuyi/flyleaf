@@ -20,8 +20,8 @@
 	<Tigger on:tiggerin={tigger(true)} on:tiggerout={tigger(false)}>
 		<slot />
 		<div slot="ctx" let:bodyEl>
-			{#if bodyEl}
-				<Content {bodyEl} show={showTipContent} {placement}>
+			{#if bodyEl && showTipContent}
+				<Content {bodyEl} {placement}>
 					<slot name="content">
 						{text || 'no context'}
 					</slot>
@@ -30,6 +30,3 @@
 		</div>
 	</Tigger>
 </div>
-
-<style lang="scss">
-</style>

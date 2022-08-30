@@ -34,13 +34,25 @@
 	&.tiparrow_pm_left-end {
 		right: -6px;
 		transform: rotate(-225deg);
-		top: calc(50% - 6px);
+	}
+
+	&.tiparrow_pm_left-start,
+	&.tiparrow_pm_right-start {
+		top: 8px;
+	}
+	&.tiparrow_pm_left-end,
+	&.tiparrow_pm_right-end {
+		bottom: 8px;
+	}
+
+	&.tiparrow_pm_left,
+	&.tiparrow_pm_right {
+		top: calc(50% - 5px);
 	}
 	&.tiparrow_pm_right-start,
 	&.tiparrow_pm_right,
 	&.tiparrow_pm_right-end {
 		transform: rotate(-45deg);
-		top: calc(50% - 6px);
 		left: -6px;
 	}
 }
