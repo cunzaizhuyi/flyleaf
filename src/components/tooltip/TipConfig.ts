@@ -10,19 +10,22 @@ const createPlacementLabel = (label: string, name: string) => [name, label].join
 const [LABEL_KEY] = DEFAULT_KEY_LIST
 export const getPlacementLabel = (placement: string, dict: ConfigObject) => dict[placement][LABEL_KEY]
 
+const getDocumentTop = () => document.documentElement.scrollTop + document.body.scrollTop
+const getDocumentLeft = () => document.documentElement.scrollLeft + document.body.scrollLeft
 
-const getStartLeft = (bodyRect: DOMRect) => bodyRect.x + 'px'
-const getStartTop = (bodyRect: DOMRect) => bodyRect.y + 'px'
+const getStartLeft = (bodyRect: DOMRect) => getDocumentLeft() + bodyRect.x + 'px'
+const getStartTop = (bodyRect: DOMRect) => getDocumentTop() + bodyRect.y + 'px'
 
-const getCenterLeft = (bodyRect: DOMRect, contentRect: DOMRect) => bodyRect.x + bodyRect.width / 2 - contentRect.width / 2 + 'px'
-const getCenterTop = (bodyRect: DOMRect, contentRect: DOMRect) => bodyRect.y - contentRect.height / 2 + bodyRect.height / 2 + 'px'
+const getCenterLeft = (bodyRect: DOMRect, contentRect: DOMRect) => getDocumentLeft() + bodyRect.x + bodyRect.width / 2 - contentRect.width / 2 + 'px'
+const getCenterTop = (bodyRect: DOMRect, contentRect: DOMRect) => getDocumentTop() + bodyRect.y - contentRect.height / 2 + bodyRect.height / 2 + 'px'
 
-const getEndLeft = (bodyRect: DOMRect, contentRect: DOMRect) => bodyRect.x - (contentRect.width - bodyRect.width) + 'px'
-const getLeftLeft = (bodyRect: DOMRect, contentRect: DOMRect) => bodyRect.x - contentRect.width - 10 + 'px'
-const getRightLeft = (bodyRect: DOMRect) => bodyRect.x + bodyRect.width + 10 + 'px'
+const getEndLeft = (bodyRect: DOMRect, contentRect: DOMRect) => getDocumentLeft() + bodyRect.x - (contentRect.width - bodyRect.width) + 'px'
+const getLeftLeft = (bodyRect: DOMRect, contentRect: DOMRect) => getDocumentLeft() + bodyRect.x - contentRect.width - 10 + 'px'
+const getRightLeft = (bodyRect: DOMRect) => getDocumentLeft() + bodyRect.x + bodyRect.width + 10 + 'px'
 
-const getTopTop = (bodyRect: DOMRect, contentRect: DOMRect) => bodyRect.y - contentRect.height - 10 + 'px'
-const getEndTop = (bodyRect: DOMRect) => bodyRect.y - bodyRect.height / 2 + 'px'
+const getTopTop = (bodyRect: DOMRect, contentRect: DOMRect) => getDocumentTop() + bodyRect.y - contentRect.height - 10 + 'px'
+const getEndTop = (bodyRect: DOMRect) => getDocumentTop() + bodyRect.y - bodyRect.height / 2 + 'px'
+const getBottomTop = (bodyRect: DOMRect, contentRect: DOMRect) => getDocumentTop() + bodyRect.y + contentRect.height + 'px'
 export const getPlacementDict = (name: string = PLACEMENT_NAME) => reduceConfigList(([
   ['top', 'top', {
     getRect: (bodyEl, contentEl) => {
@@ -51,7 +54,7 @@ export const getPlacementDict = (name: string = PLACEMENT_NAME) => reduceConfigL
   [DEFAULT_PLACEMENT, DEFAULT_PLACEMENT, {
     getRect: (bodyRect, contentRect) => {
       const left = getCenterLeft(bodyRect, contentRect)
-      const top = bodyRect.y + contentRect.height + 'px'
+      const top = getBottomTop(bodyRect, contentRect)
       return `left:${left}; top:${top} `
     }
   }
@@ -59,7 +62,7 @@ export const getPlacementDict = (name: string = PLACEMENT_NAME) => reduceConfigL
   ['bottom-start', 'bottom-start', {
     getRect: (bodyRect, contentRect) => {
       const left = getStartLeft(bodyRect)
-      const top = bodyRect.y + contentRect.height + 'px'
+      const top = getBottomTop(bodyRect, contentRect)
       return `left:${left}; top:${top} `
     }
   }
@@ -67,7 +70,7 @@ export const getPlacementDict = (name: string = PLACEMENT_NAME) => reduceConfigL
   ['bottom-end', 'bottom-end', {
     getRect: (bodyRect, contentRect) => {
       const left = getEndLeft(bodyRect, contentRect)
-      const top = bodyRect.y + contentRect.height + 'px'
+      const top = getBottomTop(bodyRect, contentRect)
       return `left:${left}; top:${top} `
     }
   }

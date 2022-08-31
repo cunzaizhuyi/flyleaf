@@ -15,7 +15,7 @@
 
 <Meta title="Components/Tooltip" component={Tooltip} />
 
-<Story name="demo">
+<Story name="mouse-enter/mouse-leave">
 	<Tooltip>
 		<button style="width: 400px; margin-left: 50px">aaashow</button>
 		<div slot="content">1433223</div>
@@ -28,7 +28,7 @@
 		/>
 	</Tooltip>
 
-	<div style="margin-top:50px" />
+	<h1>mouse-enter/mouse-leave</h1>
 	<div style="padding:50px 100px">
 		{#each PLACEMENT as pms}
 			<div style="padding:20px;display: flex;justify-content: space-between;">
@@ -41,7 +41,7 @@
 		{/each}
 	</div>
 
-	<div style="margin-top:50px" />
+	<h1>alwaysShow</h1>
 	<div style="padding:50px 100px">
 		{#each PLACEMENT as pms}
 			<div style="padding:20px;display: flex;justify-content: space-between;">
