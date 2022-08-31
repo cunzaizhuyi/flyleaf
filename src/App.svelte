@@ -3,9 +3,6 @@
 	import Marquee from '@/components/Marquee.svelte'
 	import { toast } from '@/components/toast'
 	import StepMask from '@/components/StepMask.svelte'
-	import CheckBox from './components/CheckBox.svelte'
-	import Switch from './components/Switch.svelte'
-	import Teleport from '@/components/teleport/Teleport.svelte'
 
 	const data = ['item1', 'item2', 'item3']
 
@@ -26,8 +23,6 @@
 		},
 	]
 	let switchOn = false
-
-	let disableTeleport = false
 </script>
 
 <div class="card" id="card">
@@ -35,16 +30,8 @@
 </div>
 <!--<Marquee {data}></Marquee>-->
 <div id="aa" style="width: 400px; margin: 50px">aa</div>
+
 <StepMask {isStart} {stepArr} />
-<CheckBox bind:checked={switchOn}>{switchOn ? 'Checked' : 'Unchecked'}</CheckBox
->
-<Switch bind:checked={switchOn}>{switchOn ? 'Switch on' : 'Switch off'}</Switch>
-<button on:click={() => (disableTeleport = !disableTeleport)}
-	>click and {disableTeleport ? 'use' : 'disabled'} teleport</button
->
-<Teleport disabled={disableTeleport}>
-	teleport is {disableTeleport ? 'not' : ''} in body
-</Teleport>
 
 <style lang="less">
 	.card {
