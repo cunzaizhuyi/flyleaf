@@ -13,21 +13,22 @@
 		if (isInToEl && disabled && originParentNode) {
 			isInToEl = false
 			toEl.removeChild(el)
+			console.log('teleport', to)
 			originParentNode.appendChild(el)
 		}
 		if (!isInToEl && parentNode && parentNode !== toEl) {
 			originParentNode = parentNode
 			isInToEl = true
 			parentNode.removeChild(el)
+			console.log('reset', to)
 			toEl.appendChild(el)
 		}
 	}
 
-	$: {
-		console.log('disabled change', disabled)
+	$: if (disabled || !disabled) {
 		insert(teleportEl)
 	}
-	onMount(() => !disabled && insert(teleportEl))
+	onMount(() => insert(teleportEl))
 </script>
 
 <div bind:this={teleportEl}>

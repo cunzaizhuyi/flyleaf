@@ -1,0 +1,12 @@
+.tooltip-content {
+	z-index: 2001;
+	position: absolute;
+	padding: 5px 10px;
+	border: 1px solid #0d0d0d;
+	background-color: #fff;
+	border-radius: 10px;
+	word-wrap: break-word;
+}
+.hidden {
+	visibility: hidden;
+}
