@@ -1,17 +1,17 @@
 <script lang="ts">
-	import Counter from '@/components/Counter.svelte'
-	import Marquee from '@/components/Marquee.svelte'
-	import { toast } from '@/components/toast'
-	import StepMask from '@/components/StepMask.svelte'
+	import Counter from '@/components/Counter.svelte';
+	import Marquee from '@/components/Marquee.svelte';
+	import { toast } from '@/components/toast';
+	import StepMask from '@/components/StepMask.svelte';
 
-	const data = ['item1', 'item2', 'item3']
+	const data = ['item1', 'item2', 'item3'];
 
 	// toast('这是toast内容', 1500);
 
-	let isStart = false
+	let isStart = false;
 	setTimeout(() => {
-		isStart = true
-	}, 1000)
+		isStart = true;
+	}, 1000);
 	const stepArr = [
 		{
 			id: 'card',
@@ -21,8 +21,8 @@
 			id: 'aa',
 			desc: '第二步：',
 		},
-	]
-	let switchOn = false
+	];
+	let switchOn = false;
 </script>
 
 <div class="card" id="card">

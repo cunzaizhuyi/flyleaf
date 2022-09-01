@@ -5,13 +5,13 @@
   export let checked = false;
 
   export let onChange = (status) => {
-    console.log(status)
-  }
+    console.log(status);
+  };
 
   $: src = checked ? imgChecked : imgUnchecked;
 </script>
 
-<img on:click={()=>{ checked = !checked; onChange(checked)}}
+<img on:click={() => { checked = !checked; onChange(checked);}}
      src={src} class="leaf-toggle-btn">
 
 <style lang="scss">
