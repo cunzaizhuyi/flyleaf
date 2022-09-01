@@ -2,7 +2,7 @@ const { mergeConfig } = require('vite');
 const Unocss = require('unocss/vite')
 
 let unoCfg =
-  import("../uno.js").then(res => {
+  await import("../uno.js").then(res => {
     unoCfg = res.default;
     // console.log('uno res: ', res);
   })
