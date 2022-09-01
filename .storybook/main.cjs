@@ -1,11 +1,6 @@
 const { mergeConfig } = require('vite');
 const Unocss = require('unocss/vite')
 
-let unoCfg =
-  await import("../uno.js").then(res => {
-    unoCfg = res.default;
-    // console.log('uno res: ', res);
-  })
 
 module.exports = {
   "stories": [
@@ -29,6 +24,11 @@ module.exports = {
     "storyStoreV7": false
   },
   async viteFinal(config, { configType }) {
+    let unoCfg =
+    await import("../uno.js").then(res => {
+      unoCfg = res.default;
+      // console.log('uno res: ', res);
+    })
     config.plugins.push(Unocss.default({
       ...unoCfg,
     }));
