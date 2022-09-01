@@ -24,7 +24,7 @@ module.exports = {
     "storyStoreV7": false
   },
   async viteFinal(config, { configType }) {
-    let unoCfg =
+    let unoCfg
     await import("../uno.js").then(res => {
       unoCfg = res.default;
       // console.log('uno res: ', res);
