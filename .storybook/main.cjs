@@ -1,5 +1,8 @@
 const { mergeConfig } = require('vite');
 const Unocss = require('unocss/vite')
+// import { extractorSvelte } from '@unocss/core'
+const { extractorSvelte } = require('@unocss/core')
+const path = require('path')
 
 
 module.exports = {
@@ -30,11 +33,17 @@ module.exports = {
       // console.log('uno res: ', res);
     })
     config.plugins.push(Unocss.default({
+      extractors: [extractorSvelte],
       ...unoCfg,
     }));
     return mergeConfig(config, {
       // customize the Vite config here
       base: './',
+      resolve: {
+        alias: [
+          { find: '@', replacement: path.resolve(__dirname, '/src') },
+        ],
+      },
     });
     // if(configType === "PRODUCTION") {
     //
