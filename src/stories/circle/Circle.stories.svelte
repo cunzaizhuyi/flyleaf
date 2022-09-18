@@ -61,6 +61,7 @@ args="{{
 </Story>
 
 <Story name="demo">
+  circle with different radius
   {#each circles as circle}
     <span class="px-10px">
       <Circle {...circle}></Circle>
@@ -68,7 +69,8 @@ args="{{
   {/each}
 
   <div>
-    <Circle {...circles[5]}>
+    make a avatar/logo with slot
+    <Circle {...circles[5]} bg="yellow">
       <img src="/logo-big.jpg" class="w-100%">
     </Circle>
   </div>
