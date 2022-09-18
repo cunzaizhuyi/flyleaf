@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let content: string
+  export let content: string;
 </script>
 
 <div class="tail-toast">
@@ -15,7 +15,7 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.7);
     display: flex;
     justify-content: center;
     align-items: center;

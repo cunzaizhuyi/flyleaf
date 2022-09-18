@@ -8,6 +8,9 @@ interface IOption{
   cancelText?: string
   onOk?: Function
   onCancel?: Function
+
+  cancelBtnStyle?: string
+  okBtnStyle?: string
 }
 
 export const confirm = (options: IOption) => {
@@ -20,13 +23,13 @@ export const confirm = (options: IOption) => {
     },
   });
 
-  // div.$on('onOk', () => {
-  //   div.$destroy();
-  // });
+  div.$on('onOk', () => {
+    div.$destroy();
+  });
 
-  // div.$on('onCancel', () => {
-  //   div.$destroy();
-  // });
+  div.$on('onCancel', () => {
+    div.$destroy();
+  });
 
   return div;
 };

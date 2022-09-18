@@ -1,0 +1,8 @@
+const html = '<h1 id="toast\u65B9\u6CD5" tabindex="-1">toast\u65B9\u6CD5 <a class="header-anchor" href="#toast\u65B9\u6CD5" aria-hidden="true">#</a></h1>\n<h2 id="\u4F7F\u7528\u793A\u4F8B" tabindex="-1">\u4F7F\u7528\u793A\u4F8B <a class="header-anchor" href="#\u4F7F\u7528\u793A\u4F8B" aria-hidden="true">#</a></h2>\n<pre><code class="language-javascript"><div class="htw-relative htw-not-prose __histoire-code"><div class="htw-absolute htw-top-0 htw-right-0 htw-text-xs htw-text-white/40">javascript</div><pre class="shiki" style="background-color: #0d1117"><code><span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> { toast } </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;flyleaf&#39;</span><span style="color: #C9D1D9">;</span></span>\n<span class="line"><span style="color: #D2A8FF">toast</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;\u8FD9\u662F\u5185\u5BB9&#39;</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">2000</span><span style="color: #C9D1D9">);</span></span>\n<span class="line"></span></code></pre></div></code></pre>\n<h2 id="\u4E24\u4E2A\u53C2\u6570" tabindex="-1">\u4E24\u4E2A\u53C2\u6570 <a class="header-anchor" href="#\u4E24\u4E2A\u53C2\u6570" aria-hidden="true">#</a></h2>\n<ul>\n<li>\u53C2\u65701 \u662Ftoast\u5185\u5BB9</li>\n<li>\u53C2\u65702 \u662Ftoast\u6301\u7EED\u65F6\u95F4</li>\n</ul>\n';
+const frontmatter = {};
+const relativePath = "src/story/toast/Toast.story.md";
+export {
+  frontmatter,
+  html,
+  relativePath
+};
