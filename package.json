@@ -1,7 +1,7 @@
 {
   "name": "flyleaf",
   "private": false,
-  "version": "0.1.3",
+  "version": "0.1.4",
   "type": "module",
   "module": "dist/index.es.js",
   "main": "dist/index.umd.js",
