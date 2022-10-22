@@ -9,3 +9,4 @@ export { toast } from './toast';
 export { notice } from './notice';
 export { confirm } from './confirm';
 export { mask } from './mask';
+export { AniNumber } from './ani-number';

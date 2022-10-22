@@ -1,0 +1,1 @@
+export { default as AniNumber } from './AniNumber.svelte';
